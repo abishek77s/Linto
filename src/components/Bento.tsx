@@ -20,9 +20,9 @@ export const RevealBento = ({ info, type, info1 }: Style) => {
         }}
         className="mx-auto grid max-w-4xl grid-flow-dense grid-cols-12 gap-4"
       >
-        {type === "profile" && <HeaderBlock info={info} />}
-        {type === "social" && <SocialsBlock info1={info1} />}
-        {type === "social" && <SocialsBlock info1={info1} />}
+        <SocialsBlock info1={info1} />
+        <HeaderBlock info={info} />
+        <HeaderBlock info={info} />
       </motion.div>
     </div>
   );
@@ -54,7 +54,7 @@ const Block = ({ className, ...rest }: Props) => {
         damping: 50,
       }}
       className={twMerge(
-        "col-span-4 rounded-lg border border-zinc-700 bg-zinc-800 p-6",
+        "col-span-4 rounded-3xl border border-zinc-700 bg-zinc-800 p-6",
         className
       )}
       {...rest}
@@ -79,7 +79,7 @@ const HeaderBlock = ({ info }: Style) => (
             alt="avatar"
             className="mb-4 size-14 rounded-full"
           />
-          <h1 className="mb-12 text-4xl font-medium leading-tight">
+          <h1 className="mb-12 text-4xl font-medium leading-tight bg-gradient-to-t from-blue-500 via-teal-500 to-green-500 text-transparent bg-clip-text">
             {info.text}
             <span className="text-zinc-400">{info.link}</span>
           </h1>
@@ -100,6 +100,7 @@ interface InfoItem {
   href: string;
   textColor: string;
   icon: ReactNode;
+  col: string;
 }
 
 const SocialsBlock = ({ info1 }: Style) => {
@@ -115,7 +116,7 @@ const SocialsBlock = ({ info1 }: Style) => {
               rotate: i.rotate,
               scale: 1.1,
             }}
-            className={`col-span-6 ${i.bgColor} md:col-span-3`}
+            className={`${i.col} ${i.bgColor} md:col-span-3`}
           >
             <a
               href={i.href}

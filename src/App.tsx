@@ -3,22 +3,10 @@ import { SiGithub, SiTiktok, SiYoutube, SiTwitch } from "react-icons/si";
 
 const info = [
   {
-    className: "col-span-12 row-span-2 md:col-span-6",
+    className: "col-span-12 row-span-2 md:col-span-6 ",
     src: "https://api.dicebear.com/8.x/lorelei-neutral/svg?seed=John",
     link: "Im Abishek",
     text: "Ohayo! ",
-  },
-  {
-    className: "col-span-12 row-span-2 md:col-span-6",
-    src: "https://api.dicebear.com/8.x/lorelei-neutral/svg?seed=John",
-    link: "Linto",
-    text: "Day 1 ",
-  },
-  {
-    className: "col-span-6 bg-red-500 md:col-span-3",
-    src: "https://api.dicebear.com/8.x/lorelei-neutral/svg?seed=John",
-    link: "Linto",
-    text: "Day 1 ",
   },
 ];
 
@@ -29,6 +17,7 @@ const info1 = [
     href: "#",
     textColor: "text-white",
     icon: <SiYoutube />,
+    col: "col-span-4",
   },
   {
     rotate: "-2.5deg",
@@ -36,6 +25,7 @@ const info1 = [
     href: "#",
     textColor: "text-white",
     icon: <SiGithub />,
+    col: "col-span-6",
   },
   {
     rotate: "-2.5deg",
@@ -43,21 +33,14 @@ const info1 = [
     href: "#",
     textColor: "text-black",
     icon: <SiTiktok />,
-  },
-  {
-    rotate: "2.5deg",
-    bgColor: "bg-purple-500",
-    href: "#",
-    textColor: "text-white",
-    icon: <SiTwitch />,
+    col: "col-span-4",
   },
 ];
 
 function App() {
   return (
     <>
-      <RevealBento info={info} type="profile" />
-      <RevealBento info1={info1} type="social" />
+      <RevealBento info={info} info1={info1} type="profile" />
     </>
   );
 }
