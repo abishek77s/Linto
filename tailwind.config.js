@@ -5,7 +5,11 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      gridRow: {
+        'span-6': 'span 6 / span 6',
+      },
+    },
   },
   plugins: [],
 }
