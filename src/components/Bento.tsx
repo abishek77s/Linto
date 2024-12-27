@@ -1,8 +1,6 @@
 import { motion, MotionProps } from "framer-motion";
 import { twMerge } from "tailwind-merge";
 
-import { ReactNode } from "react";
-
 interface Style {
   info?: Info[];
   info1?: InfoItem[];
@@ -19,7 +17,7 @@ export const RevealBento = ({ info, info1, info2 }: Style) => {
         transition={{
           staggerChildren: 0.05,
         }}
-        className="mx-auto grid max-w-5xl grid-flow-dense grid-cols-12 gap-3"
+        className="mx-auto grid max-w-5xl grid-flow-dense grid-cols-12 gap-3 font-geist"
       >
         <SocialsBlock info1={info1} />
         <HeaderBlock info={info} />
@@ -101,7 +99,7 @@ interface InfoItem {
   bgColor: string;
   href: string;
   textColor: string;
-  icon: ReactNode;
+  text?: string;
   col?: string;
 }
 const SocialsBlock = ({ info1 }: Style) => {
@@ -121,12 +119,11 @@ const SocialsBlock = ({ info1 }: Style) => {
               i.bgColor
             } min-h-36 ${index === 1 ? "sm:col-span-6" : "sm:col-span-3"}`}
           >
-            <a
-              href={i.href}
+            <p
               className={`grid h-full place-content-center text-3xl ${i.textColor}`}
             >
-              {i.icon}
-            </a>
+              {i.text}
+            </p>
           </Block>
         ))}
     </>

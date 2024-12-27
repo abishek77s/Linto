@@ -1,5 +1,4 @@
 import { RevealBento } from "./components/Bento";
-import { SiGithub, SiTiktok, SiYoutube } from "react-icons/si";
 
 const info = [
   {
@@ -29,22 +28,23 @@ const info1 = [
     rotate: "2.5deg",
     bgColor: "bg-[#E9E9E9]",
     href: "#",
-    textColor: "text-white",
-    icon: <SiYoutube />,
+    textColor: "text-black font-medium",
+    text: "Corsair 750W",
   },
   {
     rotate: "-2.5deg",
     bgColor: "bg-[#E9E9E9]",
     href: "#",
-    textColor: "text-white",
-    icon: <SiGithub />,
+    textColor:
+      "bg-gradient-to-r from-orange-500 via-indigo-500 to-green-500 text-transparent bg-clip-text font-bold",
+    text: "G.Skill Flare X5",
   },
   {
     rotate: "-2.5deg",
     bgColor: "bg-[#E9E9E9]",
     href: "#",
-    textColor: "text-black",
-    icon: <SiTiktok />,
+    textColor: "text-black font-medium",
+    text: "Thermalright",
   },
 ];
 
@@ -53,22 +53,23 @@ const info2 = [
     rotate: "2.5deg",
     bgColor: "bg-[#E9E9E9]",
     href: "#",
-    textColor: "text-white",
-    icon: <SiYoutube />,
+    textColor: "text-black font-medium",
+    text: "Montech Air 900 ARGB",
   },
   {
     rotate: "-2.5deg",
     bgColor: "bg-[#E9E9E9]",
     href: "#",
-    textColor: "text-white",
-    icon: <SiGithub />,
+    textColor:
+      "bg-gradient-to-r from-orange-500 via-indigo-500 to-green-500 text-transparent bg-clip-text font-bold",
+    text: "Gigabyte B550 ATX",
   },
   {
     rotate: "-2.5deg",
     bgColor: "bg-[#E9E9E9]",
     href: "#",
-    textColor: "text-black",
-    icon: <SiTiktok />,
+    textColor: "text-black font-medium",
+    text: "2 TB M.2",
   },
 ];
 
