@@ -6,8 +6,9 @@ export default {
   ],
   theme: {
     extend: {
-      gridRow: {
-        'span-6': 'span 6 / span 6',
+      fontFamily: {
+        'geist-mono': ['"Geist Mono"', 'monospace'],
+        'geist': ['"Geist"', 'sans-serif'],
       },
     },
   },

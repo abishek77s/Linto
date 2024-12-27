@@ -1,6 +1,6 @@
 import { motion, MotionProps } from "framer-motion";
 import { twMerge } from "tailwind-merge";
-import { FiArrowRight } from "react-icons/fi";
+
 import { ReactNode } from "react";
 
 interface Style {
@@ -12,14 +12,14 @@ interface Style {
 
 export const RevealBento = ({ info, info1, info2 }: Style) => {
   return (
-    <div className="min-h-screen bg-zinc-900 px-4 py-12 text-zinc-50 ">
+    <div className="min-h-screen bg-white px-4 py-12 text-zinc-50 ">
       <motion.div
         initial="initial"
         animate="animate"
         transition={{
           staggerChildren: 0.05,
         }}
-        className="mx-auto grid max-w-5xl grid-flow-dense  grid-cols-12 gap-4"
+        className="mx-auto grid max-w-5xl grid-flow-dense grid-cols-12 gap-3"
       >
         <SocialsBlock info1={info1} />
         <HeaderBlock info={info} />
@@ -55,7 +55,7 @@ const Block = ({ className, ...rest }: Props) => {
         damping: 50,
       }}
       className={twMerge(
-        "col-span-4 rounded-3xl border border-zinc-700 bg-zinc-800 p-6",
+        "col-span-4 rounded-2xl border  bg-[#E9E9E9] p-6",
         className
       )}
       {...rest}
@@ -66,30 +66,31 @@ const Block = ({ className, ...rest }: Props) => {
 interface Info {
   src?: string;
   text?: string;
+  text1?: string;
+  text2?: string;
   link?: string;
   classname?: string;
+  type?: string;
 }
 
 const HeaderBlock = ({ info }: Style) => (
   <>
     {info &&
       info.map((info) => (
-        <Block className={info.classname}>
-          <img
-            src={info.src}
-            alt="avatar"
-            className="mb-4 size-14 rounded-full"
-          />
-          <h1 className="mb-12 text-4xl font-medium leading-tight bg-gradient-to-t from-blue-500 via-teal-500 to-green-500 text-transparent bg-clip-text">
-            {info.text}
-            <span className="text-zinc-400">{info.link}</span>
-          </h1>
-          <a
-            href="#"
-            className="flex items-center gap-1 text-red-300 hover:underline"
-          >
-            Contact me <FiArrowRight />
-          </a>
+        <Block className={`${info.classname} flex flex-col justify-center`}>
+          <p className="flex items- w-full text-sm font-mono text-zinc-100 hover:underline">
+            {info.type}
+          </p>
+          <div className="flex flex-col items-center justify-center w-full h-full">
+            <div className="flex flex-col items-center justify-center w-full">
+              <h1 className="mb-1 text-4xl font-medium leading-tight text-center">
+                {info.text}
+              </h1>
+              <p className="mb-2 text-lg font-medium leading-tight text-center font-geist-mono">
+                {info.text1}
+              </p>
+            </div>
+          </div>
         </Block>
       ))}
   </>
@@ -118,7 +119,7 @@ const SocialsBlock = ({ info1 }: Style) => {
             }}
             className={`${index === 1 ? "col-span-12" : "col-span-6"} ${
               i.bgColor
-            } min-h-40 ${index === 1 ? "sm:col-span-6" : "sm:col-span-3"}`}
+            } min-h-36 ${index === 1 ? "sm:col-span-6" : "sm:col-span-3"}`}
           >
             <a
               href={i.href}
